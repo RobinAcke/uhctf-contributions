@@ -1,0 +1,145 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "NeonFont", sans-serif; /* Apply custom font */
+    background-color: black;
+    color: neon;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Apply background image with strong blur */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('background.png'); /* Update with your desired background image */
+    background-size: cover;
+    background-position: center;
+    filter: blur(20px); /* Strong blur effect */
+    z-index: -1; /* Ensure background stays behind the content */
+}
+
+/* Styles for heading */
+h1 {
+    font-size: 6em;
+    color: lime;
+    text-shadow: 3px 3px 0px cyan, 0px 0px 25px hotpink, 0px 0px 5px darkblue;
+    animation: flashing 4s infinite;
+}
+
+@keyframes flashing {
+    0% { color: lime; }
+    50% { color: hotpink; }
+    100% { color: lime; }
+}
+
+/* Neon button styles */
+.neon-button {
+    background: #ff00ff;
+    border: 3px solid #00ffff;
+    color: black;
+    padding: 15px;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.neon-button:hover {
+    background: #00ffff;
+    color: white;
+    box-shadow: 0 0 20px hotpink, 0 0 30px cyan, 0 0 40px yellow;
+    transform: scale(1.1);
+}
+
+/* Page background with blur */
+.neon-background {
+    background-image: url('https://placeimg.com/1920/1080/tech');
+    background-size: cover;
+    filter: blur(5px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Container for the page content */
+.page-container {
+    position: relative;
+    padding: 30px;
+}
+
+/* Styles for Hacktivist Manifesto */
+.wall-of-text {
+    color: yellow;
+    font-size: 1.2em;
+    background-color: rgba(0,0,0,0.6);
+    padding: 20px;
+    margin: 20px;
+    text-align: justify;
+    border: 5px solid lime;
+    box-shadow: 0px 0px 15px cyan;
+    max-width: 80%;
+    margin: 50px auto;
+    animation: textGlow 2s infinite alternate;
+}
+
+@keyframes textGlow {
+    0% { color: yellow; }
+    100% { color: lime; }
+}
+
+/* Styles for Log In Form */
+.log-in-form {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 50px;
+    box-shadow: 0px 0px 20px cyan;
+    border: 3px solid lime;
+    animation: formAnimation 12s ease infinite alternate;
+}
+
+@keyframes formAnimation {
+    0% { background-color: black; }
+    50% { background-color: #ff00ff; }
+    100% { background-color: black; }
+}
+
+.b {
+    visibility: hidden;
+}
+
+
+/* Input styles */
+input {
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid cyan;
+    font-size: 1.5em;
+    color: lime;
+    background-color: #000000;
+    box-shadow: 0px 0px 10px yellow;
+    transition: all 0.5s ease;
+}
+
+input:hover {
+    border-color: hotpink;
+    box-shadow: 0px 0px 20px hotpink;
+}
+
+/* Font */
+@font-face {
+    font-family: "NeonFont";
+    src: url("font.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}

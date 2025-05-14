@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flag Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Flag Page</h1>
+    <div class="wall-of-text">
+        <p><strong>NOTICE:</strong> this page is ONLY part of the FINAL challenge; do not waste your time before you have it unlocked!</p>
+    </div>
+    <div class="page-container">
+        <a onclick="getFlag()" class="neon-button">Get Flag</a>
+        <a href="index.html" class="neon-button">Back to Home</a>
+    </div>
+    <script>
+        const API_BASE = `${window.location.protocol}//${window.location.hostname}:5000`;
+        
+        function getToken() {
+    const token = localStorage.getItem("jwt");
+    if (!token) {
+        console.error("JWT token is missing from localStorage! Log in correctly to fix this!");
+        return null;
+    }
+    return token;
+}
+        
+        async function fetchWithAuth(endpoint) {
+            const response = await fetch(`${API_BASE}${endpoint}`, {
+                headers: { "Authorization": `Bearer ${getToken()}` }
+            });
+            return response.json();
+        }
+        
+        async function getFlag() {
+            try {
+                const whoami = await fetchWithAuth("/whoami");
+                if (!whoami.uuid) throw new Error("Failed to get UUID");
+                
+                const userInfo = await fetchWithAuth(`/user/${whoami.uuid}`);
+                console.log("User Info:", userInfo);
+                
+                const userRole = await fetchWithAuth(`/user/role/${whoami.uuid}`);
+                console.log("User Role:", userRole);
+                
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+
+            try {
+                const flag = await fetchWithAuth("/flag");
+                if (flag?.flag) {
+                    alert("Flag: " + flag.flag);
+                } else if (flag?.error) {
+                    alert("Error: " + flag.error);
+                } else {
+                    alert("Unknown error ocurred.");
+                }
+            } catch (error) {
+                alert("Error fetching flag!");
+            }
+        }
+    </script>
+</body>
+</html>
