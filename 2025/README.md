@@ -1,6 +1,6 @@
 # 2025 Edition
 
-For the 2025 edition, I came up with a more fund idea: making 1 big, themed challenge that contains a set of smaller challenges. Finishing all the small challenges, unlocks the final "main" challenge.
+For the 2025 edition, I came up with a more fun idea: making 1 big, themed challenge that contains a set of smaller challenges. Finishing all the small challenges, unlocks the final "main" challenge.
 
 As this was my biggest challenge to date, I decided to only make this set of challenges. In the end I also added 1 more small challenge for fun which only took 20 minutes to create, but was still a success during the competition.
 

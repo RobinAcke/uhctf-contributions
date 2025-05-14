@@ -30,6 +30,7 @@ Then open the resulting .ogg file in Audacity
 
 Play around with the spectogram and settings until you can see the flag; this requires the spectogram range to be set to a higher frequency as is hinted at in the metadata "There seems to be quite a lot of noises going on above 6k Hz".
 
+Fun fact: I made this .ogg file using LMMS by drawing out the flag in the piano roll! You can see it in the added FLAG.mmpz project.
 
 </ul></ul></details>
 
